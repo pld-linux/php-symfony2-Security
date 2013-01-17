@@ -4,12 +4,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Symfony2 Security Component
 Name:		php-symfony2-Security
-Version:	2.1.4
+Version:	2.1.6
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	7c361597e151dc3bb08845aa8adc0afa
+# Source0-md5:	51677bf02c272888d540be18ff65adec
 URL:		http://pear.symfony.com/package/Security/
 BuildRequires:	php-channel(pear.symfony.com)
 BuildRequires:	php-pear-PEAR >= 1:1.4.0
