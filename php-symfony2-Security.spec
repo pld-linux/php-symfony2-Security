@@ -17,13 +17,14 @@ BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
 Requires:	php-channel(pear.symfony.com)
 Requires:	php-pear >= 4:1.3.10
-Requires:	php-symfony2-EventDispatcher
-Requires:	php-symfony2-HttpFoundation
-Requires:	php-symfony2-HttpKernel
+Requires:	php-symfony2-EventDispatcher >= 2.1
+Requires:	php-symfony2-HttpFoundation >= 2.1
+Requires:	php-symfony2-HttpKernel >= 2.1
 Suggests:	php-symfony2-ClassLoader
 Suggests:	php-symfony2-Finder
 Suggests:	php-symfony2-Form
 Suggests:	php-symfony2-Routing
+Suggests:	php-symfony2-Validator
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
