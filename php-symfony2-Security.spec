@@ -3,18 +3,24 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 Security Component
 Name:		php-symfony2-Security
-Version:	2.3.4
+Version:	2.4.3
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	c8865a5a757454cf11cbb5fb4c00a886
-URL:		http://pear.symfony.com/package/Security/
+# Source0-md5:	e0f9656d92b863cdb1c42b257e9be027
+URL:		http://symfony.com/doc/2.4/book/security.html
 BuildRequires:	php-channel(pear.symfony.com)
 BuildRequires:	php-pear-PEAR >= 1:1.4.0
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
+Requires:	php(date)
+Requires:	php(hash)
+Requires:	php(json)
+Requires:	php(pcre)
+Requires:	php(session)
+Requires:	php(spl)
 Requires:	php-channel(pear.symfony.com)
 Requires:	php-pear >= 4:1.3.10
 Requires:	php-symfony2-EventDispatcher >= 2.1
@@ -38,6 +44,9 @@ Provides an infrastructure for sophisticated authorization systems.
 mv .%{php_pear_dir}/Symfony/Component/%{pearname}/Tests .
 mv .%{php_pear_dir}/Symfony/Component/%{pearname}/phpunit.xml.dist .
 
+mv .%{php_pear_dir}/Symfony/Component/%{pearname}/Csrf/Tests Csrf_Tests
+mv .%{php_pear_dir}/Symfony/Component/%{pearname}/Csrf/phpunit.xml.dist Csrf_phpunit.xml.dist
+
 # fixups
 mv docs/%{pearname}/Symfony/Component/%{pearname}/* .
 
@@ -59,9 +68,16 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/Symfony/Component/Security/Core
 %{php_pear_dir}/Symfony/Component/Security/Http
 
+%dir %{php_pear_dir}/Symfony/Component/Security/Csrf
+%{php_pear_dir}/Symfony/Component/Security/Csrf/*.php
+%{php_pear_dir}/Symfony/Component/Security/Csrf/Exception
+%{php_pear_dir}/Symfony/Component/Security/Csrf/TokenGenerator
+%{php_pear_dir}/Symfony/Component/Security/Csrf/TokenStorage
+
 %dir %{php_pear_dir}/Symfony/Component/Security/Resources
 %dir %{php_pear_dir}/Symfony/Component/Security/Resources/translations
 %lang(ar) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.ar.xlf
+%lang(bg) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.bg.xlf
 %lang(ca) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.ca.xlf
 %lang(cs) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.cs.xlf
 %lang(da) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.da.xlf
@@ -72,8 +88,11 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fa) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.fa.xlf
 %lang(fr) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.fr.xlf
 %lang(gl) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.gl.xlf
+%lang(hr) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.hr.xlf
 %lang(hu) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.hu.xlf
+%lang(id) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.id.xlf
 %lang(it) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.it.xlf
+%lang(ja) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.ja.xlf
 %lang(lb) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.lb.xlf
 %lang(nl) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.nl.xlf
 %lang(no) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.no.xlf
@@ -88,4 +107,6 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sr@latin) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.sr_Latn.xlf
 %lang(sv) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.sv.xlf
 %lang(tr) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.tr.xlf
-%lang(uk) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.ua.xlf
+%lang(ua) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.ua.xlf
+%lang(vi) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.vi.xlf
+%lang(zh_CN) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.zh_CN.xlf
