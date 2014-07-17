@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 Security Component
 Name:		php-symfony2-Security
-Version:	2.4.3
+Version:	2.4.4
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	e0f9656d92b863cdb1c42b257e9be027
+# Source0-md5:	0a51ed5f29d4df7d5874c8b5c96418a5
 URL:		http://symfony.com/doc/2.4/book/security.html
 BuildRequires:	php-channel(pear.symfony.com)
 BuildRequires:	php-pear-PEAR >= 1:1.4.0
@@ -106,6 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sr@cyrillic) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.sr_Cyrl.xlf
 %lang(sr@latin) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.sr_Latn.xlf
 %lang(sv) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.sv.xlf
+%lang(th) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.th.xlf
 %lang(tr) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.tr.xlf
 %lang(ua) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.ua.xlf
 %lang(vi) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.vi.xlf
