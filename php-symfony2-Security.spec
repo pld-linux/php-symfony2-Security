@@ -46,7 +46,7 @@ mv Csrf/LICENSE LICENSE_Csrf
 mv Csrf/README.md README_Csrf.md
 
 %build
-phpab -n -e '*/Tests/*' -o autoload.php .
+phpab -n -e '*/Tests/*' -o autoloader.php .
 
 %install
 rm -rf $RPM_BUILD_ROOT
