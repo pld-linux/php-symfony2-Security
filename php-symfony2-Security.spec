@@ -54,6 +54,9 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}
 cp -a *.php */ $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}
 rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}/Tests
 rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}/Csrf/Tests
+rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}/Http/Tests
+rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}/Core/Tests
+rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}/Acl/Tests
 
 %clean
 rm -rf $RPM_BUILD_ROOT
