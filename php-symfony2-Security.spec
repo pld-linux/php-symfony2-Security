@@ -77,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{php_pear_dir}/Symfony/Component/Security/Resources
 %dir %{php_pear_dir}/Symfony/Component/Security/Resources/translations
 %lang(ar) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.ar.xlf
+%lang(az) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.az.xlf
 %lang(bg) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.bg.xlf
 %lang(ca) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.ca.xlf
 %lang(cs) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.cs.xlf
@@ -88,12 +89,14 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fa) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.fa.xlf
 %lang(fr) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.fr.xlf
 %lang(gl) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.gl.xlf
+%lang(he) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.he.xlf
 %lang(hr) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.hr.xlf
 %lang(hu) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.hu.xlf
 %lang(id) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.id.xlf
 %lang(it) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.it.xlf
 %lang(ja) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.ja.xlf
 %lang(lb) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.lb.xlf
+%lang(lt) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.lt.xlf
 %lang(nl) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.nl.xlf
 %lang(no) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.no.xlf
 %lang(pl) %{php_pear_dir}/Symfony/Component/Security/Resources/translations/security.pl.xlf
