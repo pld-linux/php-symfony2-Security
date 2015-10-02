@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 Security Component
 Name:		php-symfony2-Security
-Version:	2.7.3
+Version:	2.7.5
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	845a02c885fb2d4ba1818e8caace12c2
+# Source0-md5:	5ebe97eeb47a596d190561d1f3bf847b
 URL:		http://symfony.com/doc/2.7/book/security.html
 BuildRequires:	phpab
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -36,7 +36,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Provides an infrastructure for sophisticated authorization systems.
 
 %prep
-%setup -q -n %{package}-%{version}
+%setup -q -n security-%{version}
 
 # Security_Csrf merged to this package...
 rm Csrf/.gitignore
@@ -52,7 +52,6 @@ phpab -n -e '*/Tests/*' -o autoloader.php .
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}
 cp -a *.php */ $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}
-rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}/Tests
 rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}/Csrf/Tests
 rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}/Http/Tests
 rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}/Core/Tests
