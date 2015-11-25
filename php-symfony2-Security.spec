@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 Security Component
 Name:		php-symfony2-Security
-Version:	2.7.5
+Version:	2.7.7
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	5ebe97eeb47a596d190561d1f3bf847b
+# Source0-md5:	35b6f6241bae50096517e1a09d37a4a1
 URL:		http://symfony.com/doc/2.7/book/security.html
 BuildRequires:	phpab
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -46,7 +46,7 @@ mv Csrf/LICENSE LICENSE_Csrf
 mv Csrf/README.md README_Csrf.md
 
 %build
-phpab -n -e '*/Tests/*' -o autoloader.php .
+phpab -n -e '*/Tests/*' -o autoload.php .
 
 %install
 rm -rf $RPM_BUILD_ROOT
