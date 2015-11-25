@@ -11,7 +11,6 @@ Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{
 # Source0-md5:	35b6f6241bae50096517e1a09d37a4a1
 URL:		http://symfony.com/doc/2.7/book/security.html
 BuildRequires:	phpab
-BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
 Requires:	php(date)
@@ -20,7 +19,6 @@ Requires:	php(json)
 Requires:	php(pcre)
 Requires:	php(session)
 Requires:	php(spl)
-Requires:	php-pear >= 4:1.3.10
 Requires:	php-symfony2-EventDispatcher >= 2.2
 Requires:	php-symfony2-HttpFoundation >= 2.1
 Requires:	php-symfony2-HttpKernel >= 2.1
