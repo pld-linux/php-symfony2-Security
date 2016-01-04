@@ -19,6 +19,7 @@ Requires:	php(json)
 Requires:	php(pcre)
 Requires:	php(session)
 Requires:	php(spl)
+Requires:	php-dirs >= 1.6
 Requires:	php-symfony2-EventDispatcher >= 2.2
 Requires:	php-symfony2-HttpFoundation >= 2.1
 Requires:	php-symfony2-HttpKernel >= 2.1
