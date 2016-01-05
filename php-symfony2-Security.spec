@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 Security Component
 Name:		php-symfony2-Security
-Version:	2.7.7
+Version:	2.7.8
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	35b6f6241bae50096517e1a09d37a4a1
+# Source0-md5:	2e812222ac7bd88e1505a357db55506c
 URL:		http://symfony.com/doc/2.7/book/security.html
 BuildRequires:	phpab
 BuildRequires:	rpmbuild(macros) >= 1.610
