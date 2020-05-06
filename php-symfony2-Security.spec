@@ -2,12 +2,12 @@
 %define		php_min_version 5.3.9
 Summary:	Symfony2 Security Component
 Name:		php-symfony2-Security
-Version:	2.7.8
+Version:	2.8.52
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	2e812222ac7bd88e1505a357db55506c
+# Source0-md5:	1fbd8e2addcead868966b0bd0ae9bc55
 URL:		http://symfony.com/doc/2.7/book/security.html
 BuildRequires:	phpab
 BuildRequires:	rpmbuild(macros) >= 1.610
@@ -36,12 +36,13 @@ Provides an infrastructure for sophisticated authorization systems.
 %prep
 %setup -q -n security-%{version}
 
-# Security_Csrf merged to this package...
-rm Csrf/.gitignore
-rm Csrf/composer.json
-rm Csrf/phpunit.xml.dist
-mv Csrf/LICENSE LICENSE_Csrf
-mv Csrf/README.md README_Csrf.md
+rm */.gitignore
+rm */composer.json
+rm */phpunit.xml.dist
+for c in Core Guard Http; do
+	mv $c/LICENSE LICENSE_$c
+	mv $c/README.md README_$c.md
+done
 
 %build
 phpab -n -e '*/Tests/*' -o autoload.php .
@@ -50,29 +51,24 @@ phpab -n -e '*/Tests/*' -o autoload.php .
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}
 cp -a *.php */ $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}
-rm -r $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}/Csrf/Tests
-rm -r $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}/Http/Tests
 rm -r $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}/Core/Tests
-rm -r $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}/Acl/Tests
+rm -r $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}/Csrf/Tests
+rm -r $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}/Guard/Tests
+rm -r $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}/Http/Tests
+rm -r $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}/Tests
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGELOG.md LICENSE README.md
-%doc README_Csrf.md LICENSE_Csrf
+%doc CHANGELOG.md README*.md LICENSE*
 %dir %{php_data_dir}/Symfony/Component/Security
 %{php_data_dir}/Symfony/Component/Security/*.php
-%{php_data_dir}/Symfony/Component/Security/Acl
 %{php_data_dir}/Symfony/Component/Security/Core
+%{php_data_dir}/Symfony/Component/Security/Csrf
+%{php_data_dir}/Symfony/Component/Security/Guard
 %{php_data_dir}/Symfony/Component/Security/Http
-
-%dir %{php_data_dir}/Symfony/Component/Security/Csrf
-%{php_data_dir}/Symfony/Component/Security/Csrf/*.php
-%{php_data_dir}/Symfony/Component/Security/Csrf/Exception
-%{php_data_dir}/Symfony/Component/Security/Csrf/TokenGenerator
-%{php_data_dir}/Symfony/Component/Security/Csrf/TokenStorage
 
 %dir %{php_data_dir}/Symfony/Component/Security/Resources
 %dir %{php_data_dir}/Symfony/Component/Security/Resources/translations
@@ -97,7 +93,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ja) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.ja.xlf
 %lang(lb) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.lb.xlf
 %lang(lt) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.lt.xlf
+%lang(lv) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.lv.xlf
+%lang(nb) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.nb.xlf
 %lang(nl) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.nl.xlf
+%lang(nn) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.nn.xlf
 %lang(no) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.no.xlf
 %lang(pl) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.pl.xlf
 %lang(pt_BR) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.pt_BR.xlf
@@ -110,6 +109,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sr@latin) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.sr_Latn.xlf
 %lang(sv) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.sv.xlf
 %lang(th) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.th.xlf
+%lang(tl) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.tl.xlf
 %lang(tr) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.tr.xlf
 %lang(ua) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.ua.xlf
 %lang(vi) %{php_data_dir}/Symfony/Component/Security/Resources/translations/security.vi.xlf
